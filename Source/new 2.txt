@@ -1,0 +1,15 @@
+Public Sub openUserManual()
+'************************************************************************************************************************************************************************************
+' Purpose: Opens the user manual
+'************************************************************************************************************************************************************************************
+    Dim helpFile As String
+    Dim pathHome1 As String
+    
+    On Error GoTo ErrorHnd:
+    pathHome1 = CStr(Sheet5.Range(EXE_FILE_ADDRESS).value)
+    helpFile = pathHome1 & "EasyGradeXLUserManual.pdf"
+    Debug.Print helpFile
+    ActiveWorkbook.FollowHyperlink helpFile
+ErrorHnd:
+    MsgBox "Unable to open EasyGradeXL.pdf. Plaese make sure that a .pdf viewer is installed."
+End Sub
